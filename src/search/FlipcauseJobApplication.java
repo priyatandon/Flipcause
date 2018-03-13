@@ -28,26 +28,25 @@ public class FlipcauseJobApplication {
 		
 		/*No. of Links in About FlipCause Page*/
 		int linksInPage=driver.findElements(By.tagName("a")).size();
-	    System.out.println("Links in Page: "+linksInPage);
+	    	System.out.println("Links in Page: "+linksInPage);
 	    
-	    /*No. Of Links in Footer*/
-	    WebElement footer=driver.findElement(By.cssSelector("footer.pt-80"));
-	    System.out.println("Links in footer section: "+footer.findElements(By.tagName("a")).size());
+	    	/*No. Of Links in Footer*/
+	    	WebElement footer=driver.findElement(By.cssSelector("footer.pt-80"));
+	    	System.out.println("Links in footer section: "+footer.findElements(By.tagName("a")).size());
 	    
-	    /*Open the Side Bar Menu*/
-	    Actions a=new Actions(driver);
-	    WebElement menusidebar=driver.findElement(By.id("menu-sidebar-list-icon"));
-	    a.moveToElement(menusidebar).click().build().perform();
+	    	/*Open the Side Bar Menu*/
+	    	Actions a=new Actions(driver);
+	    	WebElement menusidebar=driver.findElement(By.id("menu-sidebar-list-icon"));
+	    	a.moveToElement(menusidebar).click().build().perform();
 		
-	    WebElement pushmenubar=driver.findElement(By.id("pushmenu-right"));	  	
-	    System.out.println("Links in menu side bar section: "+pushmenubar.findElements(By.tagName("a")).size());
+	    	WebElement pushmenubar=driver.findElement(By.id("pushmenu-right"));	  	
+	    	System.out.println("Links in menu side bar section: "+pushmenubar.findElements(By.tagName("a")).size());
 	    
-	    /*Print the side bar menu links*/
-	    List<WebElement> pushmenu=pushmenubar.findElements(By.tagName("ul"));
-	    for(WebElement e:pushmenu) {
+	    	/*Print the side bar menu links*/
+	    	List<WebElement> pushmenu=pushmenubar.findElements(By.tagName("ul"));
+	    	for(WebElement e:pushmenu) {
 	    	System.out.println(e.getText().toString());
 	    }
-	    
 	    driver.findElement(By.xpath("//input[@id='username1']")).sendKeys("Job Application");
 	}	
 }
